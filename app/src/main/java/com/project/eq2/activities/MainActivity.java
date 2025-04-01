@@ -1,5 +1,5 @@
 package com.project.eq2.activities;
-
+//Hola comentario de prueba jeje soy Ran
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
