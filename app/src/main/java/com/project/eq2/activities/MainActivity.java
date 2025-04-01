@@ -1,6 +1,8 @@
 package com.project.eq2.activities;
 //Hola comentario de prueba jeje soy Ran
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
@@ -32,6 +34,7 @@ import com.project.eq2.utilities.PreferenceManager;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements UsersListener {
 
@@ -79,6 +82,30 @@ public class MainActivity extends AppCompatActivity implements UsersListener {
 
         getUsers();
         checkForBatteryOptimizations();
+
+        //Declara el botón de cambiar idioma
+        Button btnChangeLanguage = findViewById(R.id.btnChangeLanguage);
+
+        //Se queda esperando que lo presionen
+        btnChangeLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchLanguage();
+            }
+        });
+    }
+
+    private void switchLanguage() {
+        Locale newLocale = new Locale("en"); // Cambia a inglés
+        Resources res = getResources();
+        Configuration config = res.getConfiguration();
+        config.setLocale(newLocale);
+        res.updateConfiguration(config, res.getDisplayMetrics());
+
+        // Reinicia la actividad para aplicar los cambios
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
     }
 
     private void getUsers() {

@@ -19,4 +19,5 @@
     <string name="sign_out">Cerrar sesión</string>
     <string name="incoming_meeting_invitation">Llamada o reunión entrante</string>
     <string name="sending_meeting_invitation">Enviando notificación de reunión</string>
+    <string name="change_language">Cambiar idioma</string>
 </resources>

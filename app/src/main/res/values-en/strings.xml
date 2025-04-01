@@ -20,4 +20,5 @@
     <string name="sign_out">Sign Out</string>
     <string name="incoming_meeting_invitation">Incoming Meeting Invitation</string>
     <string name="sending_meeting_invitation">Sending Meeting Invitation</string>
+    <string name="change_language">Change language</string>
 </resources>
