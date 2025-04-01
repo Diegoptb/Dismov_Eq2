@@ -3,10 +3,9 @@ apply plugin: 'com.google.gms.google-services'
 
 android {
     compileSdkVersion 30
-    buildToolsVersion "30.0.2"
-
+    namespace "com.project.eq2"
     defaultConfig {
-        applicationId "com.project.meetingapp"
+        applicationId "com.project.eq2"
         minSdkVersion 22
         targetSdkVersion 30
         versionCode 1
