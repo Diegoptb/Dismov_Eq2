@@ -1,6 +1,7 @@
 package com.project.eq2.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.os.Bundle;
@@ -31,11 +32,15 @@ public class SignInActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        // Inicializa preferenceManager primero
+        preferenceManager = new PreferenceManager(getApplicationContext());
+        // Aplica el idioma guardado
+        applySavedLanguage();
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_in);
 
-        preferenceManager = new PreferenceManager(getApplicationContext());
-        signInProgress    = findViewById(R.id.progressBarSignIn);
+        signInProgress = findViewById(R.id.progressBarSignIn);
 
         if (preferenceManager.getBoolean(Constants.KEY_IS_SIGNED_IN)) {
             Intent intent = new Intent(getApplicationContext(), MainActivity.class);
@@ -44,8 +49,7 @@ public class SignInActivity extends AppCompatActivity {
         }
 
         findViewById(R.id.textSignUp).setOnClickListener(view ->
-                startActivity(new Intent(getApplicationContext(), SignUpActivity.class))
-        );
+                startActivity(new Intent(getApplicationContext(), SignUpActivity.class)));
 
         inputEmail    = findViewById(R.id.inputEmail);
         inputPassword = findViewById(R.id.inputPassword);
@@ -63,28 +67,66 @@ public class SignInActivity extends AppCompatActivity {
             }
         });
 
-        // Declara y configura el botón para cambiar el idioma
+        // Botón para cambiar idioma
         Button btnChangeLanguage = findViewById(R.id.btnChangeLanguage);
-        btnChangeLanguage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                switchLanguage();
-            }
-        });
+        btnChangeLanguage.setOnClickListener(view -> switchLanguage());
     }
 
-    // El método switchLanguage() se define dentro de la clase
+    // Metodo para aplicar el idioma guardado
+    private void applySavedLanguage() {
+        String language = preferenceManager.getString("APP_LANGUAGE");
+        if (language == null || language.isEmpty()) {
+            return; // Si no hay idioma guardado, usa el predeterminado
+        }
+
+        Locale locale = new Locale(language);
+        Locale.setDefault(locale);
+
+        Resources res = getResources();
+        Configuration config = res.getConfiguration();
+        config.setLocale(locale);
+        res.updateConfiguration(config, res.getDisplayMetrics());
+    }
+
+
     private void switchLanguage() {
-        Locale newLocale = new Locale("en"); // Cambia a inglés
+        // Obtener idioma actual del sistema
+        String currentLanguage = getResources().getConfiguration().locale.getLanguage();
+
+        // Alternar idioma: si está en inglés, cambia a español; si está en español, cambia a inglés
+        String newLanguage = currentLanguage.equals("en") ? "es" : "en";
+
+        // Guardar la preferencia del idioma
+        preferenceManager.putString("APP_LANGUAGE", newLanguage);
+
+        // Aplicar el nuevo idioma
+        Locale newLocale = new Locale(newLanguage);
+        Locale.setDefault(newLocale);
+
         Resources res = getResources();
         Configuration config = res.getConfiguration();
         config.setLocale(newLocale);
         res.updateConfiguration(config, res.getDisplayMetrics());
 
-        // Reinicia la actividad para aplicar los cambios
-        Intent intent = getIntent();
-        finish();
+        // Reiniciar la actividad para aplicar los cambios
+        Intent intent = new Intent(this, SignInActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+    }
+
+    private void setLocale(String lang) {
+        Locale newLocale = new Locale(lang);
+        Locale.setDefault(newLocale);
+        Resources res = getResources();
+        Configuration config = res.getConfiguration();
+        config.setLocale(newLocale);
+        res.updateConfiguration(config, res.getDisplayMetrics());
+    }
+
+    private void loadLocale() {
+        SharedPreferences prefs = getSharedPreferences("Settings", MODE_PRIVATE);
+        String language = prefs.getString("My_Lang", "es"); // Español por defecto
+        setLocale(language);
     }
 
     private void signIn() {
