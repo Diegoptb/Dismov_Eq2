@@ -39,7 +39,6 @@
             android:text="@string/sign_out"
             android:textColor="@color/colorTextIcons"
             android:textSize="@dimen/_12ssp" />
-
     </LinearLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -57,19 +56,18 @@
             android:orientation="vertical"
             android:padding="@dimen/_5sdp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
 
+    <!-- Botón para cambiar de idioma en la esquina inferior derecha -->
     <Button
         android:id="@+id/btnChangeLanguage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/change_language" />
-    >
+        android:text="@string/change_language"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
     <TextView
         android:id="@+id/textErrorMessage"
@@ -98,6 +96,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:tint="@color/colorPrimary" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

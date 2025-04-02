@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.facebook.react:react-native-svg:9.7.1-jitsi-4187680@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/8.10.2/transforms/54466a9934eeee0a5f086517e1e58583/transformed/jetified-react-native-svg-9.7.1-jitsi-4187680/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/8.10.2/transforms/54466a9934eeee0a5f086517e1e58583/transformed/jetified-react-native-svg-9.7.1-jitsi-4187680/jars/classes.jar!/" />
+      <root url="jar://$PROJECT_DIR$/caches/8.10.2/transforms/c3f7464eadbafdde6648e7ca8f009d86/transformed/jetified-react-native-svg-9.7.1-jitsi-4187680/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/caches/8.10.2/transforms/c3f7464eadbafdde6648e7ca8f009d86/transformed/jetified-react-native-svg-9.7.1-jitsi-4187680/AndroidManifest.xml" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.react/react-native-svg/9.7.1-jitsi-4187680/642cbb70f03ced3dac58391e6901551a9e00d286/react-native-svg-9.7.1-jitsi-4187680-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/caches/modules-2/files-2.1/com.facebook.react/react-native-svg/9.7.1-jitsi-4187680/642cbb70f03ced3dac58391e6901551a9e00d286/react-native-svg-9.7.1-jitsi-4187680-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

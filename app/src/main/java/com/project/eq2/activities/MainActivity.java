@@ -7,7 +7,9 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.PowerManager;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,7 +24,7 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 import com.project.eq2.R;
 import com.project.eq2.adapters.UsersAdapter;
@@ -64,11 +66,19 @@ public class MainActivity extends AppCompatActivity implements UsersListener {
 
         findViewById(R.id.textSignOut).setOnClickListener(view -> signOut());
 
-        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(task -> {
-            if (task.isSuccessful() && task.getResult() != null) {
-                sendFCMTokenToDatabase(task.getResult().getToken());
-            }
-        });
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (!task.isSuccessful()) {
+                        Log.w("FCM", "Fetching FCM registration token failed", task.getException());
+                        return;
+                    }
+
+                    // Get new FCM registration token
+                    String token = task.getResult();
+
+                    // Call your method to send token to database
+                    sendFCMTokenToDatabase(token);
+                });
 
         RecyclerView usersRecyclerview = findViewById(R.id.recyclerViewUsers);
         textErrorMessage = findViewById(R.id.textErrorMessage);

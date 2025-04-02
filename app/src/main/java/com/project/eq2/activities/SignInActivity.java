@@ -1,9 +1,12 @@
 package com.project.eq2.activities;
 
 import android.content.Intent;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -16,6 +19,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.project.eq2.R;
 import com.project.eq2.utilities.Constants;
 import com.project.eq2.utilities.PreferenceManager;
+
+import java.util.Locale;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -38,7 +43,9 @@ public class SignInActivity extends AppCompatActivity {
             finish();
         }
 
-        findViewById(R.id.textSignUp).setOnClickListener(view -> startActivity(new Intent(getApplicationContext(), SignUpActivity.class)));
+        findViewById(R.id.textSignUp).setOnClickListener(view ->
+                startActivity(new Intent(getApplicationContext(), SignUpActivity.class))
+        );
 
         inputEmail    = findViewById(R.id.inputEmail);
         inputPassword = findViewById(R.id.inputPassword);
@@ -55,6 +62,29 @@ public class SignInActivity extends AppCompatActivity {
                 signIn();
             }
         });
+
+        // Declara y configura el botón para cambiar el idioma
+        Button btnChangeLanguage = findViewById(R.id.btnChangeLanguage);
+        btnChangeLanguage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                switchLanguage();
+            }
+        });
+    }
+
+    // El método switchLanguage() se define dentro de la clase
+    private void switchLanguage() {
+        Locale newLocale = new Locale("en"); // Cambia a inglés
+        Resources res = getResources();
+        Configuration config = res.getConfiguration();
+        config.setLocale(newLocale);
+        res.updateConfiguration(config, res.getDisplayMetrics());
+
+        // Reinicia la actividad para aplicar los cambios
+        Intent intent = getIntent();
+        finish();
+        startActivity(intent);
     }
 
     private void signIn() {

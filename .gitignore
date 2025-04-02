@@ -1,0 +1,16 @@
+# Android/Java/Gradle
+.gradle/
+.idea/
+.tmp/
+caches/
+daemon/
+native/
+wrapper/
+build/
+*.jar
+*.apk
+*.aab
+
+# Archivos generados por sistemas
+.DS_Store
+local.properties

@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.facebook.react:react-native-community_netinfo:4.1.5-jitsi-4187680@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/8.10.2/transforms/b75052b79e41dda38743351ec2dda616/transformed/jetified-react-native-community_netinfo-4.1.5-jitsi-4187680/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/8.10.2/transforms/b75052b79e41dda38743351ec2dda616/transformed/jetified-react-native-community_netinfo-4.1.5-jitsi-4187680/AndroidManifest.xml" />
+      <root url="file://$PROJECT_DIR$/caches/8.10.2/transforms/1da941db1ec9664d95b050ffce781b53/transformed/jetified-react-native-community_netinfo-4.1.5-jitsi-4187680/AndroidManifest.xml" />
+      <root url="jar://$PROJECT_DIR$/caches/8.10.2/transforms/1da941db1ec9664d95b050ffce781b53/transformed/jetified-react-native-community_netinfo-4.1.5-jitsi-4187680/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.facebook.react/react-native-community_netinfo/4.1.5-jitsi-4187680/3668aad1536bd033e3019a6c54b8bce961f0c21d/react-native-community_netinfo-4.1.5-jitsi-4187680-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/caches/modules-2/files-2.1/com.facebook.react/react-native-community_netinfo/4.1.5-jitsi-4187680/3668aad1536bd033e3019a6c54b8bce961f0c21d/react-native-community_netinfo-4.1.5-jitsi-4187680-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

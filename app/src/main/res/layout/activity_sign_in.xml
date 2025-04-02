@@ -7,10 +7,12 @@
     android:background="@color/colorBackground"
     tools:context=".activities.SignInActivity">
 
+    <!-- Se recomienda que el ConstraintLayout ocupe toda la pantalla para el anclaje -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
+        <!-- Tus otros elementos existentes -->
         <LinearLayout
             android:id="@+id/layoutHeader"
             android:layout_width="match_parent"
@@ -187,5 +189,18 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textNoAccount" />
 
+        <!-- Botón para cambiar de idioma en la esquina inferior derecha -->
+        <Button
+            android:id="@+id/btnChangeLanguage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_language"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="-50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </ScrollView>

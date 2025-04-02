@@ -1,6 +1,7 @@
 package com.project.eq2.firebase;
 
 import android.content.Intent;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
@@ -15,6 +16,7 @@ public class MessagingService extends FirebaseMessagingService {
     @Override
     public void onNewToken(@NonNull String token) {
         super.onNewToken(token);
+        Log.d("FCM", "Token: "+token);
     }
 
     @Override

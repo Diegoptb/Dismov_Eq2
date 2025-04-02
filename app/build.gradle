@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 35
     namespace "com.project.eq2"
     defaultConfig {
         applicationId "com.project.eq2"
@@ -68,6 +68,9 @@ dependencies {
     //FireBase 🎉
     implementation platform('com.google.firebase:firebase-bom:33.12.0')
     implementation 'com.google.firebase:firebase-analytics'
+
+    //Para uno usar Gson, que antes se usaba.
+    implementation 'com.google.code.gson:gson:2.10.1'
 
 }
 apply plugin: 'com.google.gms.google-services'

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -14,7 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.project.eq2.R;
@@ -93,27 +94,35 @@ public class OutgoingInvitationActivity extends AppCompatActivity {
             }
         });
 
-        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(task -> {
-            if (task.isSuccessful() && task.getResult() != null) {
-                inviterToken = task.getResult().getToken();
+        FirebaseMessaging.getInstance().getToken()
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        inviterToken = task.getResult(); // getToken() ya no es necesario
 
-                if (meetingType != null) {
-                    if (getIntent().getBooleanExtra("isMultiple", false)) {
-                        Type type = new TypeToken<ArrayList<User>>(){}.getType();
-                        ArrayList<User> receivers = new Gson().fromJson(getIntent().getStringExtra("selectedUsers"), type);
-                        if (receivers != null) {
-                            totalReceivers = receivers.size();
+                        if (meetingType != null) {
+                            if (getIntent().getBooleanExtra("isMultiple", false)) {
+                                Type type = new TypeToken<ArrayList<User>>(){}.getType();
+                                ArrayList<User> receivers = new Gson().fromJson(
+                                        getIntent().getStringExtra("selectedUsers"),
+                                        type
+                                );
+
+                                if (receivers != null) {
+                                    totalReceivers = receivers.size();
+                                }
+                                initiateMeeting(meetingType, null, receivers);
+                            } else {
+                                if (user != null) {
+                                    totalReceivers = 1;
+                                    initiateMeeting(meetingType, user.token, null);
+                                }
+                            }
                         }
-                        initiateMeeting(meetingType, null, receivers);
                     } else {
-                        if (user != null) {
-                            totalReceivers = 1;
-                            initiateMeeting(meetingType, user.token, null);
-                        }
+                        Log.e("FCM", "Error getting FCM token", task.getException());
+                        // Maneja el error adecuadamente
                     }
-                }
-            }
-        });
+                });
     }
 
     private void initiateMeeting(String meetingType, String receiverToken, ArrayList<User> receivers) {
