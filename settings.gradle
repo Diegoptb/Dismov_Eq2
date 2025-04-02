@@ -1,2 +1,12 @@
+
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
 include ':app'
 rootProject.name = "Meeting App"
+

@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#28a165</color>
-    <color name="colorPrimaryDark">#288A59</color>
-    <color name="colorAccent">#FF5722</color>
-    <color name="colorPrimaryText">#2E2D2D</color>
-    <color name="colorSecondaryText">#757575</color>
+    <color name="colorPrimary">#673AB7</color>
+    <color name="colorPrimaryDark">#3D2776</color>
+    <color name="colorAccent">#2294FF</color>
+    <color name="colorPrimaryText">#FFFFFF</color>
+    <color name="colorSecondaryText">#959595</color>
     <color name="colorDivider">#BDBDBD</color>
-    <color name="colorTextIcons">#FFFFFF</color>
-    <color name="colorBackground">#FAFAFA</color>
+    <color name="colorTextIcons">#ECE1FF</color>
+    <color name="colorBackground">#FFFFFF</color>
     <color name="colorHintText">#BDBDBD</color>
-    <color name="colorMeetingInvitationStart">#28a165</color>
-    <color name="colorMeetingInvitationEnd">#2CCF7E</color>
+    <color name="colorMeetingInvitationStart">#673AB7</color>
+    <color name="colorMeetingInvitationEnd">#988E9E</color>
 </resources>
