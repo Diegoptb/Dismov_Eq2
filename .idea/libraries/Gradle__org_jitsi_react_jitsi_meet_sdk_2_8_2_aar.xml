@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: org.jitsi.react:jitsi-meet-sdk:2.8.2@aar" external-system-id="GRADLE">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/8.10.2/transforms/84edfa5b87fff270ad8826f93b362582/transformed/jetified-jitsi-meet-sdk-2.8.2/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/8.10.2/transforms/84edfa5b87fff270ad8826f93b362582/transformed/jetified-jitsi-meet-sdk-2.8.2/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/8.10.2/transforms/84edfa5b87fff270ad8826f93b362582/transformed/jetified-jitsi-meet-sdk-2.8.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.10.2/transforms/666573ecca39787be13ac6f001d4c2dd/transformed/jetified-jitsi-meet-sdk-2.8.2/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.10.2/transforms/666573ecca39787be13ac6f001d4c2dd/transformed/jetified-jitsi-meet-sdk-2.8.2/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.10.2/transforms/666573ecca39787be13ac6f001d4c2dd/transformed/jetified-jitsi-meet-sdk-2.8.2/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

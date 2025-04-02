@@ -1,14 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#673AB7</color>
-    <color name="colorPrimaryDark">#3D2776</color>
-    <color name="colorAccent">#2294FF</color>
-    <color name="colorPrimaryText">#FFFFFF</color>
-    <color name="colorSecondaryText">#959595</color>
-    <color name="colorDivider">#BDBDBD</color>
-    <color name="colorTextIcons">#ECE1FF</color>
-    <color name="colorBackground">#FFFFFF</color>
+    <color name="colorPrimary">#1C2E46</color>
+    <color name="colorPrimaryDark">#142232</color>
+    <color name="colorAccent">#05B1FB</color>
+    <color name="colorBackground">#FAFAFA</color>
+    <color name="colorPrimaryText">#212121</color>
+    <color name="colorSecondaryText">#757575</color>
     <color name="colorHintText">#BDBDBD</color>
-    <color name="colorMeetingInvitationStart">#673AB7</color>
-    <color name="colorMeetingInvitationEnd">#988E9E</color>
+    <color name="colorTextIcons">#FFFFFF</color>
+    <color name="colorDivider">#ECECEC</color>
+    <color name="colorTextSubheading">#616161</color>
+    <color name="colorTextHeading">#212121</color>
+    <color name="colorBackgroundStroke">#E6E6E6</color>
+    <color name="colorDefaultIcon">#BDBDBD</color>
+    <color name="colorTextLight">#757575</color>
+    <color name="colorSuccess">#4CAF50</color>
+    <color name="colorError">#F44336</color>
+    <color name="colorWarning">#FFC107</color>
+    <color name="colorInfo">#2196F3</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="gray_light">#F5F5F5</color>
+    <color name="gray_medium">#E0E0E0</color>
+    <color name="gray_dark">#757575</color>
+    <color name="input_background">#F5F5F5</color>
+    <color name="input_stroke">#E0E0E0</color>
+    <color name="hint_color">#78909C</color>
+    <color name="text_color_primary">#212121</color>
+    <color name="card_background">#FFFFFF</color>
+    <color name="colorSelectedUser">#4D1C2E46</color>
+
+    <!-- Colores para el fondo de invitación de reunión -->
+    <color name="colorMeetingInvitationStart">#1C2E46</color>
+    <color name="colorMeetingInvitationEnd">#142232</color>
+
+    <!-- Colores adicionales para la aplicación -->
+    <color name="colorReceivingStart">#00796B</color>
+    <color name="colorReceivingEnd">#004D40</color>
+    <color name="colorStatusBar">#142232</color>
 </resources>

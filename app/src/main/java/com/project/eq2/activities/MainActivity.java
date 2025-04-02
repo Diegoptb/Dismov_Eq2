@@ -16,11 +16,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FieldValue;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
-import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.google.gson.Gson;
 import com.project.eq2.R;
 import com.project.eq2.adapters.UsersAdapter;
@@ -46,6 +47,7 @@ public class MainActivity extends AppCompatActivity implements UsersListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
 
         preferenceManager = new PreferenceManager(getApplicationContext());
@@ -61,11 +63,15 @@ public class MainActivity extends AppCompatActivity implements UsersListener {
 
         findViewById(R.id.textSignOut).setOnClickListener(view -> signOut());
 
-        FirebaseInstanceId.getInstance().getInstanceId().addOnCompleteListener(task -> {
-            if (task.isSuccessful() && task.getResult() != null) {
-                sendFCMTokenToDatabase(task.getResult().getToken());
-            }
-        });
+        FirebaseMessaging.getInstance().getToken()
+            .addOnCompleteListener(task -> {
+                if (task.isSuccessful() && task.getResult() != null) {
+                    sendFCMTokenToDatabase(task.getResult());
+                } else {
+                    Toast.makeText(MainActivity.this,
+                            "Failed to get FCM token", Toast.LENGTH_SHORT).show();
+                }
+            });
 
         RecyclerView usersRecyclerview = findViewById(R.id.recyclerViewUsers);
         textErrorMessage = findViewById(R.id.textErrorMessage);

@@ -1,12 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.facebook.react:react-native:0.61.5-jitsi.1@aar" external-system-id="GRADLE">
     <ANNOTATIONS>
-      <root url="jar://$USER_HOME$/.gradle/caches/8.10.2/transforms/9f032304668bb32363e14b2648341a5a/transformed/jetified-react-native-0.61.5-jitsi.1/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.10.2/transforms/6d83fc518d6713858e5842ab1119bb86/transformed/jetified-react-native-0.61.5-jitsi.1/annotations.zip!/" />
     </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/8.10.2/transforms/9f032304668bb32363e14b2648341a5a/transformed/jetified-react-native-0.61.5-jitsi.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/8.10.2/transforms/9f032304668bb32363e14b2648341a5a/transformed/jetified-react-native-0.61.5-jitsi.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/8.10.2/transforms/9f032304668bb32363e14b2648341a5a/transformed/jetified-react-native-0.61.5-jitsi.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.10.2/transforms/6d83fc518d6713858e5842ab1119bb86/transformed/jetified-react-native-0.61.5-jitsi.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/8.10.2/transforms/6d83fc518d6713858e5842ab1119bb86/transformed/jetified-react-native-0.61.5-jitsi.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/8.10.2/transforms/6d83fc518d6713858e5842ab1119bb86/transformed/jetified-react-native-0.61.5-jitsi.1/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

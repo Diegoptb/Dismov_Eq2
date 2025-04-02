@@ -59,13 +59,18 @@
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="@string/we_need_a_few_details_to_get_your_account_ready"
-                android:textColor="@color/colorPrimaryText"
+                android:textColor="@color/text_color_primary"
                 android:textSize="@dimen/_16ssp" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardSignIn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_20sdp"
+                android:layout_marginStart="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_20sdp"
+                android:layout_marginEnd="@dimen/_20sdp"
+                android:elevation="@dimen/_8sdp"
+                app:cardBackgroundColor="@color/card_background"
                 app:cardCornerRadius="@dimen/_4sdp">
 
                 <LinearLayout
@@ -74,6 +79,7 @@
                     android:orientation="vertical"
                     android:padding="@dimen/_4sdp">
 
+                    <!-- Primer campo - Nombre -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -83,26 +89,29 @@
                         android:fontFamily="@font/ubuntu_regular"
                         android:includeFontPadding="false"
                         android:text="@string/first_name"
-                        android:textColor="@color/colorPrimaryText"
+                        android:textColor="@color/text_color_primary"
                         android:textSize="@dimen/_12ssp" />
 
                     <EditText
                         android:id="@+id/inputFirstName"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_30sdp"
+                        android:layout_height="@dimen/_35sdp"
                         android:layout_marginStart="@dimen/_8sdp"
                         android:layout_marginEnd="@dimen/_8sdp"
-                        android:background="@null"
+                        android:background="@drawable/background_input"
                         android:fontFamily="@font/ubuntu_regular"
                         android:hint="@string/first_name_hint"
                         android:imeOptions="actionNext"
                         android:importantForAutofill="no"
                         android:includeFontPadding="false"
                         android:inputType="text"
-                        android:textColor="@color/colorPrimaryText"
-                        android:textColorHint="@color/colorHintText"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:paddingEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/hint_color"
                         android:textSize="@dimen/_12ssp" />
 
+                    <!-- Segundo campo - Apellido -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -112,26 +121,29 @@
                         android:fontFamily="@font/ubuntu_regular"
                         android:includeFontPadding="false"
                         android:text="@string/last_name"
-                        android:textColor="@color/colorPrimaryText"
+                        android:textColor="@color/text_color_primary"
                         android:textSize="@dimen/_12ssp" />
 
                     <EditText
                         android:id="@+id/inputLastName"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_30sdp"
+                        android:layout_height="@dimen/_35sdp"
                         android:layout_marginStart="@dimen/_8sdp"
                         android:layout_marginEnd="@dimen/_8sdp"
-                        android:background="@null"
+                        android:background="@drawable/background_input"
                         android:fontFamily="@font/ubuntu_regular"
                         android:hint="@string/last_name_hint"
                         android:imeOptions="actionNext"
                         android:importantForAutofill="no"
                         android:includeFontPadding="false"
                         android:inputType="text"
-                        android:textColor="@color/colorPrimaryText"
-                        android:textColorHint="@color/colorHintText"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:paddingEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/hint_color"
                         android:textSize="@dimen/_12ssp" />
 
+                    <!-- Tercer campo - Email -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -141,26 +153,29 @@
                         android:fontFamily="@font/ubuntu_regular"
                         android:includeFontPadding="false"
                         android:text="@string/email"
-                        android:textColor="@color/colorPrimaryText"
+                        android:textColor="@color/text_color_primary"
                         android:textSize="@dimen/_12ssp" />
 
                     <EditText
                         android:id="@+id/inputEmail"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_30sdp"
+                        android:layout_height="@dimen/_35sdp"
                         android:layout_marginStart="@dimen/_8sdp"
                         android:layout_marginEnd="@dimen/_8sdp"
-                        android:background="@null"
+                        android:background="@drawable/background_input"
                         android:fontFamily="@font/ubuntu_regular"
                         android:hint="@string/your_example_com"
                         android:imeOptions="actionNext"
                         android:importantForAutofill="no"
                         android:includeFontPadding="false"
                         android:inputType="textEmailAddress"
-                        android:textColor="@color/colorPrimaryText"
-                        android:textColorHint="@color/colorHintText"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:paddingEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/hint_color"
                         android:textSize="@dimen/_12ssp" />
 
+                    <!-- Cuarto campo - Contraseña -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -170,27 +185,29 @@
                         android:fontFamily="@font/ubuntu_regular"
                         android:includeFontPadding="false"
                         android:text="@string/password"
-                        android:textColor="@color/colorPrimaryText"
+                        android:textColor="@color/text_color_primary"
                         android:textSize="@dimen/_12ssp" />
 
                     <EditText
                         android:id="@+id/inputPassword"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_30sdp"
+                        android:layout_height="@dimen/_35sdp"
                         android:layout_marginStart="@dimen/_8sdp"
                         android:layout_marginEnd="@dimen/_8sdp"
-                        android:layout_marginBottom="@dimen/_8sdp"
-                        android:background="@null"
+                        android:background="@drawable/background_input"
                         android:fontFamily="@font/ubuntu_regular"
                         android:hint="@string/password_hint"
                         android:imeOptions="actionNext"
                         android:importantForAutofill="no"
                         android:includeFontPadding="false"
                         android:inputType="textPassword"
-                        android:textColor="@color/colorPrimaryText"
-                        android:textColorHint="@color/colorHintText"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:paddingEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/hint_color"
                         android:textSize="@dimen/_12ssp" />
 
+                    <!-- Quinto campo - Confirmar Contraseña -->
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -200,25 +217,27 @@
                         android:fontFamily="@font/ubuntu_regular"
                         android:includeFontPadding="false"
                         android:text="@string/confirm_password"
-                        android:textColor="@color/colorPrimaryText"
+                        android:textColor="@color/text_color_primary"
                         android:textSize="@dimen/_12ssp" />
 
                     <EditText
                         android:id="@+id/inputConfirmPassword"
                         android:layout_width="match_parent"
-                        android:layout_height="@dimen/_30sdp"
+                        android:layout_height="@dimen/_35sdp"
                         android:layout_marginStart="@dimen/_8sdp"
                         android:layout_marginEnd="@dimen/_8sdp"
                         android:layout_marginBottom="@dimen/_8sdp"
-                        android:background="@null"
+                        android:background="@drawable/background_input"
                         android:fontFamily="@font/ubuntu_regular"
                         android:hint="@string/password_hint"
                         android:imeOptions="actionDone"
                         android:importantForAutofill="no"
                         android:includeFontPadding="false"
                         android:inputType="textPassword"
-                        android:textColor="@color/colorPrimaryText"
-                        android:textColorHint="@color/colorHintText"
+                        android:paddingStart="@dimen/_8sdp"
+                        android:paddingEnd="@dimen/_8sdp"
+                        android:textColor="@color/black"
+                        android:textColorHint="@color/hint_color"
                         android:textSize="@dimen/_12ssp" />
 
                 </LinearLayout>
@@ -227,7 +246,8 @@
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_20sdp">
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/buttonSignUp"
@@ -258,7 +278,7 @@
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:text="@string/already_have_an_account"
-                android:textColor="@color/colorPrimaryText"
+                android:textColor="@color/text_color_primary"
                 android:textSize="@dimen/_12ssp" />
 
             <TextView
@@ -273,9 +293,7 @@
                 android:text="@string/sign_in"
                 android:textAllCaps="true"
                 android:textColor="@color/colorAccent"
-                android:textSize="@dimen/_14ssp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textNoAccount" />
+                android:textSize="@dimen/_14ssp" />
 
         </LinearLayout>
 
