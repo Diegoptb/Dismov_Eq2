@@ -1,20 +1,29 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+// 1. PRIMERO buildscript
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:8.8.0'
-        classpath 'com.google.gms:google-services:4.3.10'
-
+        classpath 'com.android.tools.build:gradle:8.1.0'
+        classpath 'com.google.gms:google-services:4.3.15'
     }
 }
 
+// 2. LUEGO plugins
+plugins {
+    id 'com.android.application' version '8.1.0' apply false
+    id 'com.google.gms.google-services' version '4.3.15' apply false
+}
+
+// 3. Configuraciones adicionales
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
+        // Elimina jcenter() (está deprecado)
         maven {
             url "https://github.com/jitsi/jitsi-maven-repository/raw/master/releases"
         }

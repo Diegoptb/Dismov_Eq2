@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "951850497124",
+    "project_id": "dismov-eq2",
+    "storage_bucket": "dismov-eq2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951850497124:android:5e5ab8437bee487db15b71",
+        "android_client_info": {
+          "package_name": "com.project.eq2"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCNdPRnbPBXYFcVzlrCiD0oG-Rbo4Cn3hI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
