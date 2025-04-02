@@ -30,7 +30,7 @@ public class Constants {
     public static final String REMOTE_MSG_INVITATION_CANCELLED = "cancelled";
 
     public static final String REMOTE_MSG_MEETING_ROOM = "meetingRoom";
-    public static final String API_KEY_SERVER = "YOUR_API_KEY_SERVER";
+    public static final String API_KEY_SERVER = "BP6WYU_YPU0-vt-jlWYTYs-NwtsdbubbcGxxwv1rLG7bWk7Xrd1YNdLrjxVnN5Jt6Zy4hYVi7iYYEfFIScfwExM";
 
     public static HashMap<String, String> getRemoteMessageHeaders() {
         HashMap<String, String> headers = new HashMap<>();
